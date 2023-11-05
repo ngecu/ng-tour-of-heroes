@@ -2,19 +2,20 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl:'./app.component.html',
-  // template:
-  // `<h2>Weclome  {{person}} </h2> 
+
+  template:
+  `
+  <input [id]="myId" type="text" value="Robin">
+
+  <input disabled={{isDisabled}} [id]="myId" type="text" value="Robin">
   
-  // <p>{{title}} is of length {{title.length}}
+  <input bind-disabled=isDisabled [id]="myId" type="text" value="Robin">
 
-  // <h1>Lets convert the person name to uppercase {{person.toUpperCase()}}
+  <input [disabled]=isDisabled [id]="myId" type="text" value="Robin">
   
 
-  // <h3>{{greetUser()}}</h3>
 
-  // <h4>Site url is {{siteUrl}} </h4>
-  // `,
+  `,
   // templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -22,6 +23,8 @@ export class AppComponent {
    title = 'Dev Ngecu';
    public siteUrl = window.location.href
    public person = "Robinson Nyamu"
+   public myId="x-d"
+   public isDisabled = false
 
    greetUser(){
     return ` Hello ${this.person}`;
